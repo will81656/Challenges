@@ -2,14 +2,15 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 
-namespace Challenge1.Classes
+namespace Chall1.Classes
 {
     public class MenuUI
     {
-        private Menu_Repo _menuRepo = new Menu_Repo();
+        public Menu_Repo _menuRepo = new Menu_Repo();
 
-        private string outPut = null;
+
         private int itemCount = 0;
 
         public void Start()
@@ -62,6 +63,8 @@ namespace Challenge1.Classes
         {
 
             Console.Clear();
+            Console.WriteLine(" Enter a number for the new Menu Item: ");
+            int newNumber = Int32.Parse(Console.ReadLine());
 
             Console.Write("Enter the name of the new Menu Item: ");
             string newName = Console.ReadLine();
@@ -84,10 +87,10 @@ namespace Challenge1.Classes
                     Console.WriteLine("Please enter a number:");
             }
 
-            _menuRepo.CreateMenuItem(newName, newDesc, newIngredients, newPrice);
+            _menuRepo.CreateMenuItem(newNumber, newName, newDesc, newIngredients, newPrice);
 
             itemCount++;
-            outPut = $"{newName} has been added to the menu. \n";
+            
 
         }
 
@@ -116,7 +119,7 @@ namespace Challenge1.Classes
         public void DeleteMenuItem()
         {
             List<Menu> menu = _menuRepo.CurrentMenu();
-
+            
             Console.Clear();
 
             int num;
@@ -135,8 +138,8 @@ namespace Challenge1.Classes
                         if (delResponse == "y")
                         {
                             num--;
-                            _menuRepo.DeleteMenuItem(menu[num]);
-                            outPut = $"{item.MealName} has been removed.\n";
+                            _menuRepo.DeleteMenuItem(num);
+                            Console.WriteLine($"{item.MealName} has been removed.\n");
 
                             foreach (Menu oldItem in menu)
                             {

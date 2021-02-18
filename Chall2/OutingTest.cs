@@ -1,16 +1,18 @@
-﻿using Challenge4;
-using Challenge4.Classes;
+﻿using Chall2.Classes;
 using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace Challenge2
+namespace Chall2
 {
     class OutingTest
     {
         static void Main(string[] args)
         {
             OutingRepo outingRepo = new OutingRepo();
-            List<Outing> outingList = outingRepo.GetList();
+            List<Outing> outingList = new List<Outing>();
 
             string response = null;
             while (response != "4")
@@ -94,6 +96,8 @@ namespace Challenge2
 
                     Console.Write("Enter the total cost for the event: $");
                     decimal totalEventCost = Decimal.Parse(Console.ReadLine());
+                    
+                    Console.WriteLine("New Outing Added");
 
                     outingRepo.AddOuting(newEvent, attendance, date, individualCost, totalEventCost);
 

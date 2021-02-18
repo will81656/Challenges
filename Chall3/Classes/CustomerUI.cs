@@ -1,18 +1,19 @@
-﻿using Challenge3.Classes;
-using System;
+﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 
-namespace Challenge5.Classes
+namespace Chall3.Classes
 {
     public class CustomerUI
     {
-            CustomerRepo _custRepo = new CustomerRepo();
+        CustomerRepo _custRepo = new CustomerRepo();
         public void Main()
         {
-            
 
-           
+
+
 
         }
 
@@ -24,9 +25,9 @@ namespace Challenge5.Classes
             List<Customer> _customerList = _custRepo.CurrentCustomers();
 
 
-             _custRepo.CreateCustomer("Jake", "Smith", 1);
-             _custRepo.CreateCustomer("James", "Smith", 2);
-             _custRepo.CreateCustomer("Jane", "Smith", 3);
+            _custRepo.CreateCustomer("Jake", "Smith", 1);
+            _custRepo.CreateCustomer("James", "Smith", 2);
+            _custRepo.CreateCustomer("Jane", "Smith", 3);
 
             bool continueToRun = true;
             while (continueToRun)
@@ -66,7 +67,7 @@ namespace Challenge5.Classes
                         break;
                     default:
                         Console.WriteLine("Please enter a valid number between 0 and 4.");
-                        
+
                         break;
                 }
             }
@@ -83,7 +84,7 @@ namespace Challenge5.Classes
             _customerList.Sort((x, y) => string.Compare(x.LastName, y.FirstName));
             Console.WriteLine("UserID\tFirst\tLast\tCustomer Type\tEmail Sent");
 
-            customers.UpdateCustomer();
+            customers.UpdateCustomers();
 
             foreach (Customer customer in _customerList)
             {
@@ -106,7 +107,7 @@ namespace Challenge5.Classes
             Console.Read();
 
         }
-        
+
 
         // Create New Customer
         void CreateNewCustomer()
@@ -134,7 +135,7 @@ namespace Challenge5.Classes
 
         void DeleteCustomer()
         {
-            
+
 
             List<Customer> _customerList = _custRepo.CurrentCustomers();
 
@@ -157,7 +158,7 @@ namespace Challenge5.Classes
 
         void UpdateCustomer()
         {
-            
+
 
             List<Customer> _customerList = _custRepo.CurrentCustomers();
             Console.Clear();

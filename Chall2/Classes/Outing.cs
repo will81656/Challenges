@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 
-namespace Challenge4.Classes
+namespace Chall2.Classes
 {
     public enum EventType
     {
@@ -38,10 +40,5 @@ namespace Challenge4.Classes
                 $"\n  Cost per Person: ${IndividualCost}" +
                 $"\n  Total Event Cost: ${TotalEventCost}";
         }
-
-
-
-
-
     }
 }

@@ -1,7 +1,11 @@
-﻿using Challenge5.Classes;
+﻿using Chall3.Classes;
 using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace Challenge3
+namespace Chall3
 {
     class Customer
     {
@@ -9,7 +13,6 @@ namespace Challenge3
         {
             CustomerUI UI = new CustomerUI();
             UI.RunMenu();
-           
         }
     }
 }
